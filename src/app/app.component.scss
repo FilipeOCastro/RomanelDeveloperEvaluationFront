@@ -1,0 +1,71 @@
+// Variáveis de estilo (consistentes com criar-cliente)
+$primary-color: #007bff; // Azul primário
+$secondary-color: #6c757d; // Cinza secundário
+$background-color: #f8f9fa; // Fundo claro
+$text-color: #333; // Texto escuro
+$border-radius: 8px;
+$spacing: 1rem;
+
+// Estilização do navbar
+.navbar {
+  background-color: $primary-color;
+  padding: $spacing;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .nav-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: $spacing;
+
+      .nav-item {
+        a {
+          color: white;
+          text-decoration: none;
+          font-weight: 500;          
+          border-radius: $border-radius;
+          transition: background-color 0.3s ease, color 0.3s ease;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+          }
+
+          &.active {
+            background-color: white;
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Conteúdo principal
+main {
+  padding: $spacing * 2;
+}
+
+// Responsividade
+@media (max-width: 600px) {
+  .navbar {
+    .nav-container {
+      .nav-menu {
+        flex-direction: column;
+        align-items: center;        
+
+        .nav-item {
+          a {
+            display: block;
+            width: 100%;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

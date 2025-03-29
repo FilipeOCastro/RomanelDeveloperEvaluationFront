@@ -1,0 +1,114 @@
+// Variáveis de estilo
+$primary-color: #007bff; // Azul primário
+$secondary-color: #6c757d; // Cinza secundário
+$background-color: #f8f9fa; // Fundo claro
+$text-color: #333; // Texto escuro
+$border-radius: 8px;
+$spacing: 1rem;
+
+// Estilização global do formulário
+.cadastro-form {
+  max-width: 800px;
+  margin: $spacing auto;
+  padding: $spacing * 2;
+  background-color: $background-color;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    text-align: center;
+    color: $primary-color;
+    margin-bottom: $spacing * 2;
+  }
+
+  fieldset {
+    border: 1px solid $secondary-color;
+    border-radius: $border-radius;
+    padding: $spacing;
+    margin-bottom: $spacing * 2;
+
+    legend {
+      font-weight: bold;
+      color: $text-color;
+      padding:2px;
+    }
+  }
+
+  .cadastro-form {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .form-group {
+    input:invalid {
+      border-color: #dc3545; // Vermelho para erro
+    }
+  }
+
+  .form-group {
+    display: grid;
+    grid-template-columns: 1fr 2fr; // Label à esquerda, input à direita
+    gap: $spacing;
+    margin-bottom: $spacing;
+
+    label {
+      font-weight: 500;
+      color: $text-color;
+      align-self: center;
+    }
+
+    input {
+      padding: 2px;
+      border: 1px solid $secondary-color;
+      border-radius: $border-radius;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+        box-shadow: 0 0 5px rgba($primary-color, 0.3);
+      }
+
+      &[type="date"] {
+        padding: 2px; // Ajuste para input de data
+      }
+    }
+  }
+
+  .submit-btn {
+    display: block;
+    width: 100%;
+    padding: $spacing;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: $border-radius;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    
+
+    &:disabled {
+      background-color: $secondary-color;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// Responsividade
+@media (max-width: 600px) {
+  .cadastro-form {
+    margin: $spacing;
+    padding: $spacing;
+
+    .form-group {
+      grid-template-columns: 1fr; // Empilha label e input em telas pequenas
+      gap: 2px;
+
+      label {
+        margin-bottom: 2px;
+      }
+    }
+  }
+}
