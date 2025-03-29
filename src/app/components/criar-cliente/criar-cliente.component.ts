@@ -15,6 +15,9 @@ export class CriarClienteComponent {
   cliente: Cliente = {
     nome: '',
     cpf: '',
+    razaoSocial: '',
+    cnpj: '',
+    tipoCliente: 'PessoaFisica', // default
     dataNascimento: '',
     telefone: '',
     email: '',
@@ -29,9 +32,14 @@ export class CriarClienteComponent {
   constructor(private clienteService: ClienteService) {}
 
   onSubmit() {
-    const clienteToSend = {
+    const clienteToSend: any = {
       ...this.cliente,
-      dataNascimento: new Date(this.cliente.dataNascimento).toISOString()
+      dataNascimento: new Date(this.cliente.dataNascimento).toISOString(),
+      tipoCliente: this.cliente.tipoCliente === 'PessoaFisica' ? 0 : 1, // enum
+      nome: this.cliente.tipoCliente === 'PessoaFisica' ? this.cliente.nome : '',
+      cpf: this.cliente.tipoCliente === 'PessoaFisica' ? this.cliente.cpf : '',
+      razaoSocial: this.cliente.tipoCliente === 'PessoaJuridica' ? this.cliente.razaoSocial : '',
+      cnpj: this.cliente.tipoCliente === 'PessoaJuridica' ? this.cliente.cnpj : ''
     };
     console.log('Payload enviado:', JSON.stringify(clienteToSend));
     this.clienteService.criarCliente(clienteToSend).subscribe({
@@ -48,5 +56,21 @@ export class CriarClienteComponent {
     });
   }
 
-  resetForm() { /* ... */ }
+  resetForm() { this.cliente = {
+    nome: '',
+    cpf: '',
+    razaoSocial: '',
+    cnpj: '',
+    tipoCliente: 'PessoaFisica',
+    dataNascimento: '',
+    telefone: '',
+    email: '',
+    cep: '',
+    logradouro: '',
+    numero: '',
+    bairro: '',
+    cidade: '',
+    estado: ''
+  };
+ }
 }

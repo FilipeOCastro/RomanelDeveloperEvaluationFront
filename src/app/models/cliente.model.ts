@@ -1,6 +1,9 @@
 export interface Cliente {
-  nome: string;
-  cpf: string;
+  nome: string | null;
+  cpf: string | null;
+  razaoSocial: string | null;
+  cnpj: string | null;
+  tipoCliente: 'PessoaFisica' | 'PessoaJuridica'; 
   dataNascimento: string;
   telefone: string;
   email: string;

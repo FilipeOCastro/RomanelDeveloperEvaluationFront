@@ -1,22 +1,23 @@
 <div class="visualizar-container">
-    <h2>Visualizar Cliente</h2>
-    
-    <div class="search-section">
-      <div class="form-group">
-        <label for="clienteId">ID do Cliente:</label>
-        <input type="text" id="clienteId" [(ngModel)]="clienteId" name="clienteId" placeholder="Digite o ID do cliente" />
-      </div>
-      <button (click)="buscarCliente()" class="search-btn">Buscar</button>
-    </div>
+  <h2>Visualizar Cliente</h2>
   
-    @if (cliente) {
-      <div class="cliente-details">
-        <h3>Detalhes do Cliente</h3>
-        <div class="details-grid">
-          <div class="detail-item">
-            <span class="label">ID:</span>
-            <span class="value">{{ cliente.id }}</span>
-          </div>
+  <div class="search-section">
+    <div class="form-group">
+      <label for="clienteId">ID do Cliente:</label>
+      <input type="text" id="clienteId" [(ngModel)]="clienteId" name="clienteId" placeholder="Digite o ID do cliente" />
+    </div>
+    <button (click)="buscarCliente()" class="search-btn">Buscar</button>
+  </div>
+
+  @if (cliente) {
+    <div class="cliente-details">
+      <h3>Detalhes do Cliente</h3>
+      <div class="details-grid">
+        <div class="detail-item">
+          <span class="label">Tipo de Cliente:</span>
+          <span class="value">{{ cliente.tipoCliente }}</span>
+        </div>
+        
           <div class="detail-item">
             <span class="label">Nome:</span>
             <span class="value">{{ cliente.nome }}</span>
@@ -25,23 +26,34 @@
             <span class="label">CPF:</span>
             <span class="value">{{ cliente.cpf }}</span>
           </div>
+       
           <div class="detail-item">
-            <span class="label">Data de Nascimento:</span>
-            <span class="value">{{ cliente.dataNascimento }}</span>
-          </div>
-          <div class="detail-item">
-            <span class="label">Telefone:</span>
-            <span class="value">{{ cliente.telefone }}</span>
+            <span class="label">Razão Social:</span>
+            <span class="value">{{ cliente.razaoSocial }}</span>
           </div>
           <div class="detail-item">
-            <span class="label">Email:</span>
-            <span class="value">{{ cliente.email }}</span>
+            <span class="label">CNPJ:</span>
+            <span class="value">{{ cliente.cnpj }}</span>
           </div>
-          <div class="detail-item full-width">
-            <span class="label">Endereço:</span>
-            <span class="value">{{ cliente.endereco.logradouro }}, {{ cliente.endereco.numero }}, {{ cliente.endereco.bairro }}, {{ cliente.endereco.cidade }} - {{ cliente.endereco.estado }}, CEP: {{ cliente.endereco.cep }}</span>
-          </div>
+        
+        <div class="detail-item">
+          <span class="label">Data de Nascimento/Fundação:</span>
+          <span class="value">{{ cliente.dataNascimento }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Telefone:</span>
+          <span class="value">{{ cliente.telefone }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Email:</span>
+          <span class="value">{{ cliente.email }}</span>
+        </div>
+     
+        <div class="detail-item full-width">
+          <span class="label">Endereço:</span>
+          <span class="value">{{ cliente.logradouro }}, {{ cliente.numero }}, {{ cliente.bairro }}, {{ cliente.cidade }} - {{ cliente.estado }}, CEP: {{ cliente.cep }}</span>
         </div>
       </div>
-    }
-  </div>
+    </div>
+  }
+</div>
