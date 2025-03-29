@@ -1,12 +1,10 @@
-// Variáveis de estilo
-$primary-color: #007bff; // Azul primário
-$secondary-color: #6c757d; // Cinza secundário
-$background-color: #f8f9fa; // Fundo claro
-$text-color: #333; // Texto escuro
+$primary-color: #007bff; 
+$secondary-color: #6c757d; 
+$background-color: #f8f9fa; 
+$text-color: #333; 
 $border-radius: 8px;
 $spacing: 1rem;
 
-// Estilização global do formulário
 .cadastro-form {
   max-width: 800px;
   margin: $spacing auto;
@@ -40,13 +38,13 @@ $spacing: 1rem;
 
   .form-group {
     input:invalid {
-      border-color: #dc3545; // Vermelho para erro
+      border-color: #dc3545; 
     }
   }
 
   .form-group {
     display: grid;
-    grid-template-columns: 1fr 2fr; // Label à esquerda, input à direita
+    grid-template-columns: 1fr 2fr; 
     gap: $spacing;
     margin-bottom: $spacing;
 
@@ -70,7 +68,7 @@ $spacing: 1rem;
       }
 
       &[type="date"] {
-        padding: 2px; // Ajuste para input de data
+        padding: 2px; 
       }
     }
   }
@@ -96,14 +94,13 @@ $spacing: 1rem;
   }
 }
 
-// Responsividade
 @media (max-width: 600px) {
   .cadastro-form {
     margin: $spacing;
     padding: $spacing;
 
     .form-group {
-      grid-template-columns: 1fr; // Empilha label e input em telas pequenas
+      grid-template-columns: 1fr; 
       gap: 2px;
 
       label {

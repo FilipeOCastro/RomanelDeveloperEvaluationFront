@@ -1,12 +1,10 @@
-// Variáveis de estilo (consistentes com criar-cliente e app)
-$primary-color: #007bff; // Azul primário
-$secondary-color: #6c757d; // Cinza secundário
-$background-color: #f8f9fa; // Fundo claro
-$text-color: #333; // Texto escuro
+$primary-color: #007bff; 
+$secondary-color: #6c757d; 
+$background-color: #f8f9fa; 
+$text-color: #333; 
 $border-radius: 8px;
 $spacing: 1rem;
 
-// Contêiner principal
 .visualizar-container {
   max-width: 800px;
   margin: $spacing auto;
@@ -20,8 +18,7 @@ $spacing: 1rem;
     color: $primary-color;
     margin-bottom: $spacing * 2;
   }
-
-  // Seção de busca
+  
   .search-section {
     display: flex;
     gap: $spacing;
@@ -62,14 +59,9 @@ $spacing: 1rem;
       font-size: 1rem;
       cursor: pointer;
       transition: background-color 0.3s ease;
-
-      &:hover {
-        
-      }
     }
   }
-
-  // Detalhes do cliente
+  
   .cliente-details {
     border: 1px solid $secondary-color;
     border-radius: $border-radius;
@@ -90,7 +82,7 @@ $spacing: 1rem;
         flex-direction: column;
 
         &.full-width {
-          grid-column: span 2; // Ocupa as duas colunas
+          grid-column: span 2; 
         }
 
         .label {
@@ -107,7 +99,6 @@ $spacing: 1rem;
   }
 }
 
-// Responsividade
 @media (max-width: 600px) {
   .visualizar-container {
     margin: $spacing;
@@ -123,7 +114,7 @@ $spacing: 1rem;
 
     .cliente-details {
       .details-grid {
-        grid-template-columns: 1fr; // Uma coluna em telas pequenas
+        grid-template-columns: 1fr; 
         .full-width {
           grid-column: span 1;
         }

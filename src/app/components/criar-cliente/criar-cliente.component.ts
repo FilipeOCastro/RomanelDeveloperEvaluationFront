@@ -44,7 +44,7 @@ export class CriarClienteComponent {
     console.log('Payload enviado:', JSON.stringify(clienteToSend));
     this.clienteService.criarCliente(clienteToSend).subscribe({
       next: (response) => {
-        console.log('Resposta da API:', response); // Log da resposta completa
+        console.log('Resposta da API:', response); 
         alert(`Cliente criado com ID: ${response}`);
         this.resetForm();
       },
